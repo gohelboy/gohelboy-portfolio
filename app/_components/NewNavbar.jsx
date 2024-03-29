@@ -1,10 +1,9 @@
 'use client'
-import Image from "next/image"
-import { Mate_SC } from 'next/font/google'
-import React, { useEffect, useState } from 'react'
-import Button from './Button'
 import { motion } from "framer-motion"
 import { ChevronsLeft } from 'lucide-react'
+import { Mate_SC } from 'next/font/google'
+import Image from "next/image"
+import { useEffect, useState } from 'react'
 import { cn } from "../_utils/helper"
 
 const mate_sc = Mate_SC({ subsets: ['latin'], weight: ["400"] });
@@ -14,11 +13,11 @@ const NewNavbar = () => {
     function getCurrentTime() {
         const now = new Date();
         const options = {
-            timeZone: 'Asia/Kolkata', // Set the time zone to India (Asia/Kolkata)
-            hour12: true, // Use 12-hour format
-            hour: 'numeric', // Get hours in numeric format
-            minute: '2-digit', // Get minutes in 2-digit format
-            second: '2-digit', // Get seconds in 2-digit format
+            timeZone: 'Asia/Kolkata',
+            hour12: true,
+            hour: 'numeric',
+            minute: '2-digit',
+            second: '2-digit',
         };
         const indianTime = now.toLocaleString('en-US', options);
         const [time, ampm] = indianTime.split(' ');
@@ -102,7 +101,7 @@ const NewNavbar = () => {
                             onMouseEnter={() => setHoverOnClose(true)}
                             onMouseLeave={() => setHoverOnClose(false)}
                             className="overflow-hidden" >
-                            <Button className="overflow-hidden relative flex flex-col items-center justify-center" onClick={controlMenu}>
+                            <button className="overflow-hidden relative flex flex-col items-center justify-center bg-[--secondary-bg] hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold" onClick={controlMenu}>
                                 <div className="relative">
                                     <motion.div
                                         initial={{ x: 0, opacity: 1 }}
@@ -127,7 +126,7 @@ const NewNavbar = () => {
                                     <span>S</span>
                                     <span>E</span>
                                 </div>
-                            </Button>
+                            </button>
                         </motion.div>
 
                         <div className="flex gap-7">
@@ -169,13 +168,13 @@ const NewNavbar = () => {
                 className="justify-between flex items-center w-[777px] rounded-xl p-3 z-[2] bg-[--primary-bg]" >
                 <Image src={"./signature.svg"} width={64} height={64} alt="signature" priority />
                 <div className='flex items-center gap-4'>
-                    <Button
-                        classes={'bg-transparent hover:bg-transparent cursor-pointer text-[--text-color-1] font-normal'}
+                    <button
+                        classes={'relative text-[--button-text] px-5 py-2 rounded-md font-bold bg-transparent hover:bg-transparent cursor-pointer text-[--text-color-1] font-normal'}
                         onClick={controlMenu}
                     >
                         Menu
-                    </Button>
-                    <Button >Let&apos;s talk</Button>
+                    </button>
+                    <button className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold" >Let&apos;s talk</button>
                 </div>
             </motion.div>
         </nav >

@@ -1,14 +1,11 @@
 'use client'
 import { motion } from "framer-motion";
-import { Angkor, Judson } from 'next/font/google';
+import { MoveRight } from "lucide-react";
+import { Judson } from 'next/font/google';
 import Image from "next/image";
-import Button from "./Button";
-import { MoveRight } from "lucide-react"
 import { useState } from "react";
 
 const judson = Judson({ subsets: ["latin"], weight: ['400', '700'], });
-const angkor = Angkor({ subsets: ['latin'], weight: ['400'] });
-
 const Contact = () => {
 
     const [hoverOnSend, setHoverOnSend] = useState(false);
@@ -49,7 +46,7 @@ const Contact = () => {
                                         <label className="text-lg " htmlFor='name'>Message</label>
                                         <textarea id='email ' rows={5} className='w-full mt-1 p-3 font-bold text-[--primary-bg] text-xl  rounded-lg' />
                                     </div>
-                                    <Button >
+                                    <button className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold" >
                                         <div className="flex gap-3 items-center justify-center" onMouseEnter={() => setHoverOnSend(true)}
                                             onMouseLeave={() => setHoverOnSend(false)}>
                                             <span className="text-xl font-bold">Send Message</span>
@@ -70,7 +67,7 @@ const Contact = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </Button>
+                                    </button>
                                 </div>
                             </div>
                         </div>
