@@ -23,10 +23,10 @@
     --primary-bg: #000000;
     --secondary-bg: #FBF6EE;
     --hover-button: #eee9e2;
-    --text-color-1: #E4E4E4;
+    --text-color-1: #FBF6EE;
     --text-color-2: #B5B5B5;
     --text-color-3: #787878;
-    --button-text: #2b2b2b;
+    --button-text: rgb(0, 2, 34);
   }
 }
 
@@ -71,7 +71,7 @@ body:before {
 
 .text-stroke {
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-color: var(--text-color-1);
   color: transparent;
   transition: all 1s ease;
 }

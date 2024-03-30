@@ -10,7 +10,7 @@ const About = () => {
 
     const [nameHover, setNameHover] = useState(false);
     return (
-        <section id='#about' className={`h-screen flex flex-col gap-3 items-center justify-center ${judson.className}`}>
+        <section id='#about' className={`h-fit flex flex-col gap-3 items-center justify-center mt-[100px] ${judson.className}`}>
             <div className='w-full max-w-[1280px] border border-[--border-color] relative rounded-3xl p-7'>
                 <div className='text-5xl absolute left-[30px] top-[-30px] bg-[--primary-bg]'>
                     Kem Cho?
@@ -80,8 +80,6 @@ const About = () => {
                         </motion.div>
                     </div>
                 </div>
-
-
             </div>
             <div className='w-full max-w-[1280px]  border border-[--border-color] relative rounded-3xl p-7'>
                 <div className='flex justify-between'>

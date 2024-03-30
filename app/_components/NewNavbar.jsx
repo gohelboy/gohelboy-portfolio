@@ -143,7 +143,7 @@ const NewNavbar = () => {
                                 animate={{ y: isMenuOpen ? 0 : "100px", opacity: isMenuOpen ? 1 : 0 }}
                                 transition={{ delay: isMenuOpen ? 1 : 0 }} className="flex flex-col items-end  text-xl">
                                 <div>Time</div>
-                                <div className="text-3xl font-bold">{currentTime.hours}<span className="animate-ping duration-100">:</span>{currentTime.minutes}{" "}{currentTime.ampm}</div>
+                                <div className="text-3xl font-bold">{currentTime.hours}<span className="animate-ping duration-1000">:</span>{currentTime.minutes}{" "}{currentTime.ampm}</div>
                             </motion.div>
                         </div>
                     </div>

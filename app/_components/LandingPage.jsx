@@ -49,7 +49,6 @@ const LandingPage = () => {
                 style={{ x: mouse.x, y: mouse.y, opacity: mouse.opacity, transition: "all 0.3s linear" }}
                 className={'absolute top-0 left-0 '}>
                 <Image src={"/cloud1.svg"} alt="cloud" width={100} height={100} />
-
             </motion.div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden">
                 <Image src={"/bgring.svg"} alt="bg" width={700} height={700} className='animate-spin duration-[5s]' />
@@ -61,7 +60,7 @@ const LandingPage = () => {
                         animate={{ opacity: 0.2 }}
                         transition={{ delay: 0 }}
                         className='absolute top-[-24px] right-0  select-none z-[-1]'>
-                        <Image src={"/blob.svg"} alt="cloud" width={200} height={200} />
+                        <Image src={"/blob.svg"} alt="blob" width={200} height={200} />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0 }}
