@@ -38,7 +38,7 @@ const LandingPage = () => {
 
 
     return (
-        <div className="h-screen relative flex flex-col items-center justify-end" onMouseMove={handleMouseMove} ref={containerRef}>
+        <div className="h-screen relative flex flex-col items-center justify-end overflow-hidden" onMouseMove={handleMouseMove} ref={containerRef}>
             <div className='absolute top-[70px] right-0 opacity-20 animate-cloudmoveleft'>
                 <Image src={"/cloud1.svg"} alt="cloud" width={200} height={200} />
             </div>
@@ -78,6 +78,7 @@ const LandingPage = () => {
                         transition={{ delay: 1 }}
                         className={`${angkor.className} text-[7rem] font-bold text-stroke`}> Creative Mode </motion.div>
                 </div>
+
                 <motion.div
                     initial={{ y: 10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -86,6 +87,10 @@ const LandingPage = () => {
                 >
                     <Image src={"/me.png"} alt="me" width={800} height={600} />
                 </motion.div>
+
+                <div className="absolute h-[100px] w-full bg-gradient-to-t from-[--primary-bg] to-transparent left-0 bottom-0 z-10">
+
+                </div>
                 <motion.div
                     initial={{ x: 10, opacity: 0 }}
                     animate={{ x: 0, opacity: 0.5 }}

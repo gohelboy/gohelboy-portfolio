@@ -11,7 +11,8 @@ const About = () => {
     const [nameHover, setNameHover] = useState(false);
     return (
         <section id='#about' className={`h-fit flex flex-col gap-3 items-center justify-center mt-[100px] ${judson.className}`}>
-            <div className='w-full max-w-[1280px] border border-[--border-color] relative rounded-3xl p-7'>
+            <motion.div
+                className='w-full max-w-[1280px] border border-[--border-color] relative rounded-3xl p-7'>
                 <div className='text-5xl absolute left-[30px] top-[-30px] bg-[--primary-bg]'>
                     Kem Cho?
                 </div>
@@ -45,7 +46,10 @@ const About = () => {
 
                                 <motion.div
                                     initial={{ opacity: 0, x: "-20px", y: "20px", rotate: "-10deg" }}
-                                    animate={{ opacity: 1, x: "0px", y: 0, rotate: nameHover ? "90deg" : "0deg" }}
+                                    whileInView={{ opacity: 1, x: "0px", y: 0, }}
+                                    transition={{ delay: 0.2 }}
+                                    viewport={{ amount: 1 }}
+                                    animate={{ rotate: nameHover ? "90deg" : "0deg" }}
                                     className='absolute top-[15px] right-[-20px]'>
                                     <Image src={"/star.svg"} alt="star" width={24} height={24} />
                                 </motion.div>
@@ -80,14 +84,24 @@ const About = () => {
                         </motion.div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <div className='w-full max-w-[1280px]  border border-[--border-color] relative rounded-3xl p-7'>
                 <div className='flex justify-between'>
                     <p className='max-w-[700px] first-letter:text-7xl'>I work as a web developer, designer, and graphic artist, and I also enjoy creating games. Most of my time is spent coding, designing, and developing scenes. When I see something interesting, I often think about how I could make it myself. I then dive into the process of learning and improving my skills, both in terms of technology and how I see the world.
                         <br />
                         <br />
                         Creating things is something I truly love. There's a special feeling when you create something great that others can use and appreciate. I have lots of ideas that I want to execute and bring to life using my skills, which keeps me motivated to contribute positively to the fields of technology and design.
+
+                        <br />
+                        <br />
+                        <span className="inline-flex items-center justify-center gap-2">
+                            <svg width="10" height="10" fill='green' className="animate-pulse">
+                                <ellipse cx="5" cy="5" rx="5" ry="5">
+                                </ellipse>
+                            </svg>
+                            Available for work</span>
                     </p>
+
                     <div className='flex flex-col gap-5 items-end'>
                         <div className='flex flex-col items-end'>
                             <div className="text-5xl">Education</div>

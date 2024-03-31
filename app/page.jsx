@@ -4,6 +4,8 @@ import NewNavbar from "./_components/NewNavbar";
 import LandingPage from "./_components/LandingPage";
 import About from "./_components/about";
 import Contact from "./_components/contact";
+import Worked from "./_components/worked";
+import Skills from "./_components/Skills.jsx";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <NewNavbar />
       <LandingPage />
       <About />
+      <Worked />
+      <Skills />
       <Contact />
       <Footer />
     </main>
