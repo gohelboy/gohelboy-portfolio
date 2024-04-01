@@ -30,7 +30,7 @@ const Contact = () => {
                                         <Image src={"/diamond.svg"} width={70} height={70} alt='diamond' />
                                     </motion.div>
                                 </div>
-                                <div className='text-lg'>Let's chat! I'd love to collaborate on your next dream project.</div>
+                                <div className='text-lg'>Let&apos;s chat! I&apos;d love to collaborate on your next dream project.</div>
                             </div>
                             <div className={`flex flex-col gap-4`}>
                                 <div className='flex flex-col w-full'>

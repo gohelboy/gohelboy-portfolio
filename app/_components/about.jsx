@@ -88,7 +88,7 @@ const About = () => {
                     <p className='max-w-[700px] first-letter:text-7xl'>I work as a web developer, designer, and graphic artist, and I also enjoy creating games. Most of my time is spent coding, designing, and developing scenes. When I see something interesting, I often think about how I could make it myself. I then dive into the process of learning and improving my skills, both in terms of technology and how I see the world.
                         <br />
                         <br />
-                        Creating things is something I truly love. There's a special feeling when you create something great that others can use and appreciate. I have lots of ideas that I want to execute and bring to life using my skills, which keeps me motivated to contribute positively to the fields of technology and design.
+                        Creating things is something I truly love. There&apos;s a special feeling when you create something great that others can use and appreciate. I have lots of ideas that I want to execute and bring to life using my skills, which keeps me motivated to contribute positively to the fields of technology and design.
 
                         <br />
                         <br />
