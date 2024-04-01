@@ -35,15 +35,15 @@ const Footer = () => {
         <div
             onMouseMove={handleMouseMove}
             ref={containerRef}
-            className='h-[90vh] overflow-hidden mx-7 relative flex flex-col  items-center mt-[100px] p-10 bg-gradient-to-b from-[#0a0a0a] via-[--primary-bg] to-[--primary-bg] rounded-t-3xl border border-b-0 border-[--border-color]'>
+            className='h-[90vh] overflow-hidden mx-3 md:mx-7 relative flex flex-col  items-center mt-[100px] p-7 md:p-10 bg-gradient-to-b from-[#0a0a0a] via-[--primary-bg] to-[--primary-bg] rounded-t-3xl border border-b-0 border-[--border-color]'>
             <div className='w-full max-w-[1280px]'>
-                <div className='flex justify-between'>
-                    <div className='flex flex-col justify-between'>
-                        <div className='text-lg'>
+                <div className='flex flex-col-reverse md:flex-row justify-between gap-7'>
+                    <div className='flex flex-col gap-7 justify-between'>
+                        <div className='text-center md:text-start text-base md:text-lg'>
                             <div> Designed & Developed with 💖 by Dwarkesh Gohel (<u>@gohelboy</u>) </div>
-                            <div>  All rights reseved ~ 2024 </div>
+                            <div className='hidden md:block'> All rights reseved ~ 2024</div>
                         </div>
-                        <div className={`${mate_sc.className} text-7xl`}> Thank You<span className='text-[--accent-color] animate-ping'>.</span> </div>
+                        <div className={`${mate_sc.className} text-center md:text-start text-5xl md:text-7xl`}> Thank You<span className='text-[--accent-color] animate-ping'>.</span> </div>
                     </div>
                     <div className='flex gap-10 font-bold text-lg'>
                         <div className='flex flex-col gap-5'>
@@ -80,7 +80,6 @@ const Footer = () => {
                                 <span className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Contact</span>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

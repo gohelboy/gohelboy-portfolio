@@ -39,10 +39,10 @@ const LandingPage = () => {
 
     return (
         <div className="h-screen relative flex flex-col items-center justify-end overflow-hidden" onMouseMove={handleMouseMove} ref={containerRef}>
-            <div className='absolute top-[70px] right-0 opacity-20 animate-cloudmoveleft'>
+            <div className='absolute top-[70px] right-0 opacity-10 animate-cloudmoveleft'>
                 <Image src={"/cloud1.svg"} alt="cloud" width={200} height={200} />
             </div>
-            <div className='absolute top-[300px] left-0 animate-cloudmoveright opacity-20'>
+            <div className='absolute top-[300px] left-0 animate-cloudmoveright opacity-10'>
                 <Image src={"/cloud1.svg"} alt="cloud" width={150} height={150} />
             </div>
             <motion.div
@@ -50,47 +50,45 @@ const LandingPage = () => {
                 className={'absolute top-0 left-0 '}>
                 <Image src={"/cloud1.svg"} alt="cloud" width={100} height={100} />
             </motion.div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden w-[400px] md:w-auto md:h-auto">
                 <Image src={"/bgring.svg"} alt="bg" width={700} height={700} className='animate-spin duration-[5s]' />
             </div>
-            <div className='h-fit absoulte bottom-0 flex flex-col justify-center items-center z-[0]'>
-                <div className={`relative pt-7`}>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.2 }}
-                        transition={{ delay: 0 }}
-                        className='absolute top-[-24px] right-0  select-none z-[-1]'>
-                        <Image src={"/blob.svg"} alt="blob" width={200} height={200} />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
-                        className={`${mate_sc.className} flex justify-between text-[4rem] absolute top-0 left-[95px]`}> Always </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
-                        className={`${mate_sc.className} flex justify-between text-[4rem] absolute top-0 right-[130px] `}>On </motion.div>
-                    <motion.div
-                        initial={{ y: 100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 1 }}
-                        className={`${angkor.className} text-[7rem] font-bold text-stroke`}> Creative Mode </motion.div>
-                </div>
-
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-[125%] md:translate-y-[250%]">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.2 }}
+                    transition={{ delay: 0 }}
+                    className='absolute top-[-24px] md:-top-20 right-0 select-none z-[-1]'>
+                    <Image src={"/blob.svg"} alt="blob" width={200} height={200} />
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1 }}
+                    className={`${mate_sc.className} static md:absolute md:top-[-45px] md:left-[110px] text-right md:text-start text-5xl md:text-7xl`}> Always </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1 }}
+                    className={`${mate_sc.className} static md:absolute md:top-[-45px] md:right-[145px] text-right md:text-start text-5xl md:text-7xl`}>On </motion.div>
+                <motion.div
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 1 }}
+                    className={`${angkor.className} text-7xl md:text-9xl text-stroke`}>
+                    <span className="hidden md:block text-nowrap">Creative Mode</span>
+                    <span className="md:hidden">Creative Mode</span>
+                </motion.div>
+            </div>
+            <div className='h-fit bottom-0 flex flex-col items-center'>
                 <motion.div
                     initial={{ y: 10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
-                    className='z-10'
+                    className='md:z-10'
                 >
                     <Image src={"/me.png"} alt="me" width={800} height={600} />
                 </motion.div>
-
-                <div className="absolute h-[100px] w-full bg-gradient-to-t from-[--primary-bg] to-transparent left-0 bottom-0 z-10">
-
-                </div>
                 <motion.div
                     initial={{ x: 10, opacity: 0 }}
                     animate={{ x: 0, opacity: 0.5 }}
@@ -100,7 +98,8 @@ const LandingPage = () => {
                     <Image src={"/signature.svg"} alt="me" width={70} height={70} />
                 </motion.div>
             </div>
-
+            <div className="absolute h-[100px] w-full bg-gradient-to-t from-[--primary-bg] to-transparent left-0 bottom-0 md:z-10">
+            </div>
         </div >
     )
 }

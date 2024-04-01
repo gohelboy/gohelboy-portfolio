@@ -3,13 +3,15 @@ import { motion } from "framer-motion"
 import { ChevronsLeft } from 'lucide-react'
 import { Mate_SC } from 'next/font/google'
 import Image from "next/image"
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { cn } from "../_utils/helper"
 
 const mate_sc = Mate_SC({ subsets: ['latin'], weight: ["400"] });
 
 
 const NewNavbar = () => {
+
+    const navRef = useRef(null);
     function getCurrentTime() {
         const now = new Date();
         const options = {
@@ -29,7 +31,6 @@ const NewNavbar = () => {
             ampm: ampm.toLowerCase(), // Convert AM/PM to lowercase
         };
     }
-
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentTime, setCurrentTime] = useState({
@@ -52,8 +53,6 @@ const NewNavbar = () => {
         setIsMenuOpen(!isMenuOpen)
     }
 
-
-
     const navLinks = [
         { title: "About", href: "#" },
         { title: "Skills", href: "#" },
@@ -61,20 +60,18 @@ const NewNavbar = () => {
         { title: "Contact", href: "#" }
     ]
 
-
-
     return (
-        <nav className={`${mate_sc.className}  fixed top-7 left-1/2 transform -translate-x-1/2  w-full z-[1] flex items-center justify-center`}>
+        <nav className={`${mate_sc.className} fixed top-7 left-1/2 transform -translate-x-1/2  w-full z-[1] flex items-center justify-center`}>
             <motion.div
                 initial={{ height: 0, width: 0, top: 0 }}
                 animate={{
-                    height: isMenuOpen ? 'auto' : "64px",
-                    width: isMenuOpen ? '97%' : "770px",
+                    height: isMenuOpen ? 'auto' : "62px",
+                    width: isMenuOpen ? '97%' : navRef.current?.offsetWidth - 10 + "px",
                     top: isMenuOpen ? "-14px" : 0,
                 }}
-                className={cn("absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full rounded-2xl bg-[--secondary-bg] overflow-hidden")}
+                className="fixed w-full h-full rounded-2xl bg-[--secondary-bg] overflow-hidden"
             >
-                <div className="p-9 flex w-full justify-between text-[--text-color-3]">
+                <div className="p-9 flex flex-col md:flex-row w-full justify-between text-[--text-color-3]">
                     <div className="flex flex-col items-cetner justify-center mt-14 " >
                         {navLinks?.map((link, i) => {
                             return <motion.div
@@ -101,15 +98,16 @@ const NewNavbar = () => {
                             onMouseEnter={() => setHoverOnClose(true)}
                             onMouseLeave={() => setHoverOnClose(false)}
                             className="overflow-hidden" >
-                            <button className="overflow-hidden relative flex flex-col items-center justify-center bg-[--secondary-bg] hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold" onClick={controlMenu}>
+                            <button className="overflow-hidden mt-0 md:mt-10 relative flex flex-col items-center justify-center md:bg-[--secondary-bg] md:hover:bg-[--hover-button] text-[--button-text] p-0 md:px-5 py-2 rounded-md font-bold" onClick={controlMenu}>
                                 <div className="relative">
                                     <motion.div
                                         initial={{ x: 0, opacity: 1 }}
                                         animate={hoverOnClose ? { x: -70, opacity: 0 } : { x: 0, opacity: 1 }}
-                                    >
-                                        <ChevronsLeft size={48} />
+                                        onTap={{ x: -70, opacity: 0 }}
+                                        className="rotate-90 md:rotate-0">
+                                        <ChevronsLeft size={48} className="rotate-90 md:rotate-0" />
                                     </motion.div>
-                                    <div className="absolute top-0">
+                                    <div className="absolute top-0 rotate-90 md:rotate-0">
                                         <motion.div
                                             initial={{ x: -40, opacity: 0 }}
                                             animate={hoverOnClose ? { x: 0, opacity: 1 } : { x: 70, opacity: 0 }}
@@ -153,19 +151,19 @@ const NewNavbar = () => {
                     initial={{ x: "300px", y: "300px" }}
                     animate={{ x: isMenuOpen ? 0 : "300px", y: isMenuOpen ? 0 : "300px", animation: "" }}
                     transition={{ duration: 1, type: "spring" }}
-                    className="absolute bottom-[-50px] right-[-50px] z-[0] overflow-hidden animate-spin1"
+                    className="absolute bottom-[-50px] right-[-50px] z-[-1] overflow-hidden animate-spin1"
                 >
                     <Image src={"/globe.svg"} width={300} height={300} alt="globe" className="opacity-10" />
                 </motion.div>
 
             </motion.div>
 
-
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="justify-between flex items-center w-[777px] rounded-xl p-3 z-[2] bg-[--primary-bg]" >
+                ref={navRef}
+                initial={{ opacity: 0, margin: "0px 0rem" }}
+                animate={{ opacity: 1, margin: isMenuOpen ? "0px 1rem" : "0px 0rem" }}
+                transition={{ delay: 0.3, margin: { duration: 0.5 } }}
+                className={cn("justify-between flex items-center w-[777px] rounded-xl p-3 z-[2] bg-[--primary-bg]")} >
                 <Image src={"./signature.svg"} width={64} height={64} alt="signature" priority />
                 <div className='flex items-center gap-4'>
                     <button
