@@ -39,21 +39,21 @@ const LandingPage = () => {
 
     return (
         <div className="h-screen relative flex flex-col items-center justify-end overflow-hidden" onMouseMove={handleMouseMove} ref={containerRef}>
-            <div className='absolute top-[70px] right-0 opacity-10 animate-cloudmoveleft'>
+            <div className='absolute top-[70px] right-0 opacity-10 animate-cloudmoveleft w-[150px] md:w-auto'>
                 <Image src={"/cloud1.svg"} alt="cloud" width={200} height={200} />
             </div>
-            <div className='absolute top-[300px] left-0 animate-cloudmoveright opacity-10'>
+            <div className='absolute top-[300px] left-0 animate-cloudmoveright opacity-10 w-[100px] md:w-auto'>
                 <Image src={"/cloud1.svg"} alt="cloud" width={150} height={150} />
             </div>
             <motion.div
                 style={{ x: mouse.x, y: mouse.y, opacity: mouse.opacity, transition: "all 0.3s linear" }}
-                className={'absolute top-0 left-0 '}>
+                className={'absolute top-0 left-0 w-[100px] md:w-auto'}>
                 <Image src={"/cloud1.svg"} alt="cloud" width={100} height={100} />
             </motion.div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden w-[400px] md:w-auto md:h-auto">
                 <Image src={"/bgring.svg"} alt="bg" width={700} height={700} className='animate-spin duration-[5s]' />
             </div>
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-[125%] md:translate-y-[250%]">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-[60%] md:translate-y-[250%]">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.2 }}

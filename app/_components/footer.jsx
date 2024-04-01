@@ -48,32 +48,32 @@ const Footer = () => {
                     <div className='flex gap-10 font-bold text-lg'>
                         <div className='flex flex-col gap-5'>
                             <div className='text-xl border-b-2'>Social</div>
-                            <div className='flex flex-col gap-3 text-[--text-color-2]'>
+                            <div className='flex text-base md:text-xl flex-col gap-1.5 md:gap-3 text-[--text-color-2]'>
                                 <Link href={"mailto:dwarkeshgohel1@gmail.com"} className="flex items-center gap-1 hover:text-[--secondary-bg] cursor-pointer transition-colors">
-                                    <Mail />
+                                    <Mail className='w-[20px] md:w-auto' />
                                     <span>Email</span>
                                 </Link>
                                 <Link href="https://www.linkedin.com/in/dwarkesh-gohel-0b47b7190/" className="flex items-center gap-1 hover:text-[--secondary-bg] cursor-pointer transition-colors">
-                                    <Linkedin />
+                                    <Linkedin className='w-[20px] md:w-auto' />
                                     <span>Linkedin</span>
                                 </Link>
                                 <Link href="https://twitter.com/gohelboy" className="flex items-center gap-1 hover:text-[--secondary-bg] cursor-pointer transition-colors">
-                                    <Twitter />
+                                    <Twitter className='w-[20px] md:w-auto' />
                                     <span>Twitter</span>
                                 </Link>
                                 <Link href="https://github.com/gohelboy" className="flex items-center gap-1 hover:text-[--secondary-bg] cursor-pointer transition-colors">
-                                    <Github />
+                                    <Github className='w-[20px] md:w-auto' />
                                     <span>Gitub</span>
                                 </Link>
                                 <Link href="https://www.instagram.com/gohelboy/" className="flex items-center gap-1 hover:text-[--secondary-bg] cursor-pointer transition-colors">
-                                    <Instagram />
+                                    <Instagram className='w-[20px] md:w-auto' />
                                     <span>Instagram</span>
                                 </Link>
                             </div>
                         </div>
                         <div className='flex flex-col gap-5'>
                             <div className='text-xl border-b-2'>Explore </div>
-                            <div className='flex flex-col gap-3 text-[--text-color-2]'>
+                            <div className='text-base md:text-xl flex flex-col gap-1.5 md:gap-3  text-[--text-color-2]'>
                                 <span className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>About</span>
                                 <span className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Skills</span>
                                 <span className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Projects</span>
@@ -84,10 +84,10 @@ const Footer = () => {
                 </div>
             </div>
             <div className='relative w-full'>
-                <div className='absolute top-0 right-0 opacity-20 animate-cloudmoveleft'>
+                <div className='absolute top-0 right-0 opacity-10 animate-cloudmoveleft'>
                     <Image src={"/cloud1.svg"} alt="cloud" width={200} height={200} />
                 </div>
-                <div className='absolute top-[200px] left-0 animate-cloudmoveright opacity-20'>
+                <div className='absolute top-[200px] left-0 animate-cloudmoveright opacity-10'>
                     <Image src={"/cloud1.svg"} alt="cloud" width={150} height={150} />
                 </div>
                 <div className='absolute top-0 left-0 opacity-20'>

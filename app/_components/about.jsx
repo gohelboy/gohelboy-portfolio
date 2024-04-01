@@ -18,19 +18,19 @@ const About = () => {
                     <div className='h-full flex justify-between'>
                         <div className=''>
                             <div className='text-lg'>My name is</div>
-                            <div className={`${mate_sc.className} text-7xl md:text-9xl relative`}
+                            <div className={`${mate_sc.className} text-6xl md:text-9xl relative`}
                                 onMouseEnter={() => setNameHover(true)} onMouseLeave={() => setNameHover(false)}>
                                 <div>Dwarkesh</div>
-                                <div className='flex items-start md:items-center'>G
+                                <div className='flex items-center md:items-center'>G
                                     <motion.span
                                         initial={{ scale: 0 }}
                                         animate={{ scale: 1 }}
                                     >
-                                        <Image className='overflow-hidden w-[48px] md:h-fit md:w-fit mt-5 filter grayscale hover:grayscale-0 transition-all rounded-full'
+                                        <Image className='overflow-hidden w-[40px] md:w-[90px] mt-1 md:mt-4 border filter grayscale hover:grayscale-0 transition-all rounded-full'
                                             src={"/np.png"}
-                                            alt="star"
-                                            width={65}
-                                            height={65} />
+                                            alt="me"
+                                            width={100}
+                                            height={100} />
                                     </motion.span>
 
                                     hel</div>

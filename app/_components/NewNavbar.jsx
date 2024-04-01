@@ -71,12 +71,12 @@ const NewNavbar = () => {
                 }}
                 className="fixed w-full h-full rounded-2xl bg-[--secondary-bg] overflow-hidden"
             >
-                <div className="p-9 flex flex-col md:flex-row w-full justify-between text-[--text-color-3]">
+                <div className="p-9 flex flex-col md:flex-row gap-7 w-full justify-between text-[--text-color-3]">
                     <div className="flex flex-col items-cetner justify-center mt-14 " >
                         {navLinks?.map((link, i) => {
                             return <motion.div
                                 whileHover={{ x: 7, opacity: 1, borderBottom: "5px solid #A4161A" }}
-                                key={i} className="text-[4rem] h-[96px] w-[400px] relative cursor-pointer font-bold hover:text-[--accent-color] filter transition-color overflow-y-hidden">
+                                key={i} className="text-[2rem] md:text-[4rem] h-[40px] md:h-[96px] w-[400px] relative cursor-pointer font-bold hover:text-[--accent-color] filter transition-color overflow-y-hidden">
                                 <motion.span key={i}
                                     initial={{ y: "-100px", opacity: 0.5 }}
                                     animate={{ y: isMenuOpen ? "0px" : "-100px", opacity: isMenuOpen ? 1 : 0.5 }}
@@ -98,7 +98,7 @@ const NewNavbar = () => {
                             onMouseEnter={() => setHoverOnClose(true)}
                             onMouseLeave={() => setHoverOnClose(false)}
                             className="overflow-hidden" >
-                            <button className="overflow-hidden mt-0 md:mt-10 relative flex flex-col items-center justify-center md:bg-[--secondary-bg] md:hover:bg-[--hover-button] text-[--button-text] p-0 md:px-5 py-2 rounded-md font-bold" onClick={controlMenu}>
+                            <button className="overflow-hidden hidden md:flex mt-0 md:mt-10 relative flex-col items-center justify-center md:bg-[--secondary-bg] md:hover:bg-[--hover-button] text-[--button-text] p-0 md:px-5 py-2 rounded-md font-bold" onClick={controlMenu}>
                                 <div className="relative">
                                     <motion.div
                                         initial={{ x: 0, opacity: 1 }}
@@ -132,16 +132,16 @@ const NewNavbar = () => {
                                 initial={{ y: "100px", opacity: 0 }}
                                 animate={{ y: isMenuOpen ? 0 : "100px", opacity: isMenuOpen ? 1 : 0 }}
                                 transition={{ delay: isMenuOpen ? 0.8 : 0 }}
-                                className="flex flex-col items-end text-xl">
+                                className="flex flex-col md:items-end">
                                 <div>Location</div>
-                                <div className="text-3xl font-bold">Gujarat, India</div>
+                                <div className="text-xl md:text-3xl font-bold">Gujarat, India</div>
                             </motion.div>
                             <motion.div
                                 initial={{ y: "100px", opacity: 0 }}
                                 animate={{ y: isMenuOpen ? 0 : "100px", opacity: isMenuOpen ? 1 : 0 }}
-                                transition={{ delay: isMenuOpen ? 1 : 0 }} className="flex flex-col items-end  text-xl">
+                                transition={{ delay: isMenuOpen ? 1 : 0 }} className="flex flex-col md:items-end ">
                                 <div>Time</div>
-                                <div className="text-3xl font-bold">{currentTime.hours}<span className="animate-ping duration-1000">:</span>{currentTime.minutes}{" "}{currentTime.ampm}</div>
+                                <div className="text-xl md:text-3xl font-bold">{currentTime.hours}<span className="animate-ping duration-1000">:</span>{currentTime.minutes}{" "}{currentTime.ampm}</div>
                             </motion.div>
                         </div>
                     </div>

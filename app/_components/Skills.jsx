@@ -39,7 +39,7 @@ const Skills = () => {
             <div className='w-full max-w-[1280px] flex flex-col gap-7'>
                 <div className='text-5xl md:text-7xl text-center'>GOOD AT</div>
                 <div className='border border-[--border-color] bg-[#0D0D0D] rounded-3xl p-4 flex flex-col md:flex-row gap-4 md:gap-9 h-full justify-between'>
-                    <div className='flex  justify-between gap-2 md:gap-4 border-[--border-color] bg-[--primary-bg] p-4 rounded-2xl'>
+                    <div className='flex justify-between gap-2 md:gap-4 border-[--border-color] bg-[--primary-bg] p-4 rounded-2xl'>
                         <span className='text-4xl md:text-5xl '>Web <br />Development</span>
                         <IconDEV className={"self-end opacity-10 size-24 "} />
                     </div>
@@ -57,9 +57,9 @@ const Skills = () => {
                         ))}
                     </div>
                 </div>
-                <div className='grid groid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-7'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7'>
                     <div className='border border-[--border-color] bg-[#0D0D0D] rounded-3xl p-4 flex flex-col gap-5'>
-                        <div className='flex  justify-between gap-2 border-[--border-color] bg-[--primary-bg] p-4 rounded-2xl h-fit '>
+                        <div className='flex justify-between gap-2 border-[--border-color] bg-[--primary-bg] p-4 rounded-2xl h-fit '>
                             <span className='text-4xl md:text-5xl'>Web <br />Designing</span>
                             <IconDesign className={"self-end opacity-10 size-24 "} />
                         </div>
