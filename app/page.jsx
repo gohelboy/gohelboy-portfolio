@@ -5,7 +5,8 @@ import LandingPage from "./_components/LandingPage";
 import About from "./_components/about";
 import Contact from "./_components/contact";
 import Worked from "./_components/worked";
-import Skills from "./_components/Skills.jsx";
+import Skills from "./_components/Skills";
+import Projects from "./_components/Projects"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Worked />
       <Skills />
+      <Projects />
       <Contact />
       <Footer />
     </main>

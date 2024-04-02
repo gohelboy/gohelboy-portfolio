@@ -35,7 +35,7 @@ const Skills = () => {
     ]
 
     return (
-        <section className='mt-[100px] mx-[18px] flex items-center justify-center'>
+        <section id='skills' className='py-[150px] mx-[18px] flex items-center justify-center'>
             <div className='w-full max-w-[1280px] flex flex-col gap-7'>
                 <div className='text-5xl md:text-7xl text-center'>GOOD AT</div>
                 <div className='border border-[--border-color] bg-[#0D0D0D] rounded-3xl p-4 flex flex-col md:flex-row gap-4 md:gap-9 h-full justify-between'>

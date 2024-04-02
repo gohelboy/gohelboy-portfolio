@@ -6,6 +6,7 @@ import { Mate_SC } from 'next/font/google';
 import Link from "next/link"
 import Image from "next/image";
 import { useMotionValue, motion } from "framer-motion"
+import { MoveUp } from "lucide-react"
 
 const mate_sc = Mate_SC({ subsets: ['latin'], weight: ['400'] });
 const Footer = () => {
@@ -31,11 +32,17 @@ const Footer = () => {
             mouse.opacity.set(0);
         }, 3000);
     }
+
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
         <div
             onMouseMove={handleMouseMove}
             ref={containerRef}
-            className='h-[90vh] overflow-hidden mx-3 md:mx-7 relative flex flex-col  items-center mt-[100px] p-7 md:p-10 bg-gradient-to-b from-[#0a0a0a] via-[--primary-bg] to-[--primary-bg] rounded-t-3xl border border-b-0 border-[--border-color]'>
+            className='h-[85vh] md:h-[90vh] overflow-hidden mx-3 md:mx-7 relative flex flex-col  items-center mt-[100px] p-7 md:p-10 bg-gradient-to-b from-[#0a0a0a] via-[--primary-bg] to-[--primary-bg] rounded-t-3xl border border-b-0 border-[--border-color]'>
             <div className='w-full max-w-[1280px]'>
                 <div className='flex flex-col-reverse md:flex-row justify-between gap-7'>
                     <div className='flex flex-col gap-7 justify-between'>
@@ -80,12 +87,17 @@ const Footer = () => {
                                 <span className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Contact</span>
                             </div>
                         </div>
+                        <button
+                            onClick={scrollToTop}
+                            className="rounded-2xl p-4 border border-[--border-color] h-fit active:scale-95 transition-all">
+                            <MoveUp />
+                        </button>
                     </div>
                 </div>
             </div>
             <div className='relative w-full'>
                 <div className='absolute top-0 right-0 opacity-10 animate-cloudmoveleft'>
-                    <Image src={"/cloud1.svg"} alt="cloud" width={200} height={200} />
+                    <Image src={"/cloud1.svg"} alt="cloud" width={100} height={100} />
                 </div>
                 <div className='absolute top-[200px] left-0 animate-cloudmoveright opacity-10'>
                     <Image src={"/cloud1.svg"} alt="cloud" width={150} height={150} />
@@ -100,7 +112,6 @@ const Footer = () => {
                 </motion.div>
             </div>
             <div className='absolute bottom-0 left-0 w-full'>
-                {/* <Image src={"/sleepy.jpg"} alt="cloud" width={400} height={400} /> */}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className='scale-x-[-1]' opacity={0.05}>
                     <path
                         fill="#fff"

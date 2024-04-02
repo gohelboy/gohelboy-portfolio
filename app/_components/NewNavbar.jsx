@@ -5,6 +5,7 @@ import { Mate_SC } from 'next/font/google'
 import Image from "next/image"
 import { useEffect, useRef, useState } from 'react'
 import { cn } from "../_utils/helper"
+import Link from "next/link"
 
 const mate_sc = Mate_SC({ subsets: ['latin'], weight: ["400"] });
 
@@ -54,10 +55,10 @@ const NewNavbar = () => {
     }
 
     const navLinks = [
-        { title: "About", href: "#" },
-        { title: "Skills", href: "#" },
-        { title: "Project", href: "#" },
-        { title: "Contact", href: "#" }
+        { title: "About", link: "#about", },
+        { title: "Skills", link: "#skills" },
+        { title: "Project", link: "#projects" },
+        { title: "Contact", link: "#contact" }
     ]
 
     return (
@@ -71,21 +72,24 @@ const NewNavbar = () => {
                 }}
                 className="fixed w-full h-full rounded-2xl bg-[--secondary-bg] overflow-hidden"
             >
-                <div className="p-9 flex flex-col md:flex-row gap-7 w-full justify-between text-[--text-color-3]">
-                    <div className="flex flex-col items-cetner justify-center mt-14 " >
+                <div className="p-5 md:p-9 flex flex-col md:flex-row gap-7 w-full justify-between text-[--text-color-3]">
+                    <div className="flex flex-col items-cetner justify-center mt-16 md:mt-14 " >
                         {navLinks?.map((link, i) => {
-                            return <motion.div
-                                whileHover={{ x: 7, opacity: 1, borderBottom: "5px solid #A4161A" }}
-                                key={i} className="text-[2rem] md:text-[4rem] h-[40px] md:h-[96px] w-[400px] relative cursor-pointer font-bold hover:text-[--accent-color] filter transition-color overflow-y-hidden">
-                                <motion.span key={i}
-                                    initial={{ y: "-100px", opacity: 0.5 }}
-                                    animate={{ y: isMenuOpen ? "0px" : "-100px", opacity: isMenuOpen ? 1 : 0.5 }}
-                                    transition={{ delay: isMenuOpen ? 0.16 * i : 0, duration: 0.5, x: { delay: 0 } }}
-                                    className="absolute top-0 flex flex-col ">
-                                    {link.title}
-                                    <div className="opacity-20">{link?.title}</div>
-                                </motion.span>
-                            </motion.div>
+                            return <Link href={link?.link} key={i} >
+                                <motion.div
+                                    whileHover={{ x: 7, opacity: 1, borderBottom: "5px solid #A4161A" }}
+                                    className="text-[2rem] md:text-[4rem] h-[40px] md:h-[96px] w-[400px] relative cursor-pointer font-bold hover:text-[--accent-color] filter transition-color overflow-y-hidden">
+                                    <motion.span key={i}
+                                        initial={{ y: "-100px", opacity: 0.5 }}
+                                        animate={{ y: isMenuOpen ? "0px" : "-100px", opacity: isMenuOpen ? 1 : 0.5 }}
+                                        transition={{ delay: isMenuOpen ? 0.16 * i : 0, duration: 0.5, x: { delay: 0 } }}
+                                        className="absolute top-0 flex flex-col ">
+                                        {link.title}
+                                        <div className="opacity-20">{link?.title}</div>
+                                    </motion.span>
+                                </motion.div>
+                            </Link>
+
                         })}
                     </div>
 
@@ -172,7 +176,7 @@ const NewNavbar = () => {
                     >
                         Menu
                     </button>
-                    <button className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold" >Let&apos;s talk</button>
+                    <a href={"#contact"} className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold cursor-pointer" >Let&apos;s talk</a>
                 </div>
             </motion.div>
         </nav >

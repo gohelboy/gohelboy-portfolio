@@ -1,18 +1,63 @@
 'use client'
 import { motion } from "framer-motion";
-import { MoveRight } from "lucide-react";
+import { Disc3, MoveRight } from "lucide-react";
 import { Judson } from 'next/font/google';
 import Image from "next/image";
 import { useState } from "react";
+import { cn } from "../_utils/helper";
 
 const judson = Judson({ subsets: ["latin"], weight: ['400', '700'], });
 const Contact = () => {
 
     const [hoverOnSend, setHoverOnSend] = useState(false);
+    const [loading, setLoading] = useState(false);
 
+    const [details, setDetails] = useState({
+        name: "",
+        email: "",
+        message: "",
+        budget: "$50 - $100",
+    });
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        try {
+            setLoading(true);
+            const response = await fetch('/api/contact', {
+                method: 'post',
+                body: JSON.stringify(details),
+            });
+            if (!response.ok) {
+                setLoading(false);
+                throw new Error(`Invalid response: ${response.status}`);
+            }
+            setLoading(false);
+            setDetails(
+                {
+                    name: "",
+                    email: "",
+                    message: "",
+                    budget: "$50 - $100",
+                }
+            )
+
+        } catch (err) {
+            console.error(err);
+            alert("We can't submit the form, try again later?");
+            setLoading(false);
+            setDetails(
+                {
+                    name: "",
+                    email: "",
+                    message: "",
+                    budget: "$50 - $100",
+                }
+            )
+        }
+    }
 
     return (
-        <section id='#about' className={`h-fit flex flex-col gap-3 items-center my-[100px] mx-[18px] ${judson.className}`}>
+        <section id='contact' className={`h-fit flex flex-col gap-3 items-center pt-[100px] mx-[18px] ${judson.className}`}>
             <div className='w-full max-w-[1280px] flex flex-col gap-14 items-center justify-center relative mt-7'>
                 <div className='text-5xl md:text-7xl z-50'>Contact<span className='text-[--accent-color] animate-ping'>.</span></div>
                 <div className="flex flex-col md:flex-row gap-20 md:gap-5 w-full">
@@ -32,41 +77,59 @@ const Contact = () => {
                                 </div>
                                 <div className='text-lg'>Let&apos;s chat! I&apos;d love to collaborate on your next dream project.</div>
                             </div>
-                            <div className={`flex flex-col gap-4`}>
+                            <form onSubmit={handleSubmit} className={`flex flex-col gap-4`}>
                                 <div className='flex flex-col w-full'>
                                     <label className="text-lg" htmlFor='name'>Your Name</label>
-                                    <input id='name' className='w-full h-12 p-3 mt-1 font-bold text-xl rounded-lg text-[--primary-bg] bg-[--secondary-bg]' />
+                                    <input id='name' type="text" value={details.name} onChange={(e) => setDetails({ ...details, name: e.target.value })} className='w-full h-12 p-3 mt-1 font-bold text-xl rounded-lg text-[--primary-bg] bg-[--secondary-bg]' required />
                                 </div>
                                 <div className='flex flex-col w-full'>
                                     <label className="text-lg" htmlFor='email'>Email</label>
-                                    <input id='email' className='w-full h-12 p-3 mt-1 rounded-lg font-bold text-xl text-[--primary-bg] bg-[--secondary-bg]' />
+                                    <input id='email' type="email" value={details.email} onChange={(e) => setDetails({ ...details, email: e.target.value })} className='w-full h-12 p-3 mt-1 rounded-lg font-bold text-xl text-[--primary-bg] bg-[--secondary-bg]' required />
+                                </div>
+                                <div className="flex items-center justify-center gap-3 md:text-xl">
+                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$50 - $100" ? "bg-[--secondary-bg] text-[--primary-bg] font-bold" : "")}
+                                        onClick={() => setDetails({ ...details, budget: "$50 - $100" })}>$50 - $100</div>
+                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$100 - $500" ? "bg-[--secondary-bg] text-[--primary-bg] font-bold" : "")}
+                                        onClick={() => setDetails({ ...details, budget: "$100 - $500" })}>$100 - $500</div>
+                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$500 - $1000" ? "bg-[--secondary-bg] text-[--primary-bg] font-bold" : "")}
+                                        onClick={() => setDetails({ ...details, budget: "$500 - $1000" })}>$500 - $1000</div>
                                 </div>
                                 <div className='flex flex-col w-full'>
                                     <label className="text-lg " htmlFor='message'>Message</label>
-                                    <textarea id='message' rows={5} className='w-full mt-1 p-3 font-bold text-[--primary-bg] text-xl  rounded-lg bg-[--secondary-bg]' />
+                                    <textarea id='message' rows={5} value={details.message} onChange={(e) => setDetails({ ...details, message: e.target.value })} className='w-full mt-1 p-3 font-bold text-[--primary-bg] text-xl  rounded-lg bg-[--secondary-bg]' required />
                                 </div>
-                                <button className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold flex gap-3 items-center justify-center"
+                                <button
+                                    type="submit"
+                                    className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold flex gap-3 items-center justify-center"
                                     onMouseEnter={() => setHoverOnSend(true)}
                                     onMouseLeave={() => setHoverOnSend(false)}>
-                                    <span className="text-xl font-bold">Send Message</span>
-                                    <div className="relative">
-                                        <motion.div
-                                            initial={{ x: 0, opacity: 1 }}
-                                            animate={hoverOnSend ? { x: 35, opacity: 0 } : { x: 0, opacity: 1 }}
-                                        >
-                                            <MoveRight />
-                                        </motion.div>
-                                        <div className="absolute top-0">
+
+                                    {loading ? <div className="flex items-center justify-center gap-3">
+                                        <span className="text-xl">Sending...</span>
+                                        <Disc3 className="animate-spin" />
+                                    </div> : <div className="flex items-center justify-center gap-3">
+                                        <span className="text-xl font-bold">Send Message</span>
+                                        <div className="relative">
                                             <motion.div
-                                                initial={{ x: -20, opacity: 0 }}
-                                                animate={hoverOnSend ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+                                                initial={{ x: 0, opacity: 1 }}
+                                                animate={hoverOnSend ? { x: 35, opacity: 0 } : { x: 0, opacity: 1 }}
                                             >
                                                 <MoveRight />
                                             </motion.div>
+                                            <div className="absolute top-0">
+                                                <motion.div
+                                                    initial={{ x: -20, opacity: 0 }}
+                                                    animate={hoverOnSend ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+                                                >
+                                                    <MoveRight />
+                                                </motion.div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </div>}
+
+
                                 </button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <div className=" w-full rounded-3xl p-3 border border-[--border-color] relative">

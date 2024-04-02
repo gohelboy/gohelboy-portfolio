@@ -14,7 +14,7 @@ const Worked = () => {
     ]
 
     return (
-        <section className='py-[20px] md:py-[70px]  mx-[18px] flex flex-col items-center justify-center gap-7 mt-[100px]'>
+        <section className='py-[20px] md:py-[50px] mx-[18px] flex flex-col items-center justify-center gap-7'>
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
