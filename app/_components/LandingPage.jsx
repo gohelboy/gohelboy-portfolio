@@ -28,8 +28,6 @@ const LandingPage = () => {
         mouse.x.set(offsetX)
         mouse.y.set(offsetY)
         mouse.opacity.set(0.2);
-
-
         clearTimeout(timerRef.current);
         timerRef.current = setTimeout(() => {
             mouse.opacity.set(0);
@@ -39,6 +37,9 @@ const LandingPage = () => {
 
     return (
         <div className="h-screen relative flex flex-col items-center justify-end overflow-hidden" onMouseMove={handleMouseMove} ref={containerRef}>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden w-[400px] md:w-auto md:h-auto">
+                <Image src={"/bgring.svg"} alt="bg" width={700} height={700} className='animate-spin duration-[5s]' />
+            </div>
             <div className='absolute top-[70px] right-0 opacity-10 animate-cloudmoveleft w-[150px] md:w-auto'>
                 <Image src={"/cloud1.svg"} alt="cloud" width={200} height={200} />
             </div>
@@ -50,9 +51,7 @@ const LandingPage = () => {
                 className={'absolute top-0 left-0 w-[100px] md:w-auto'}>
                 <Image src={"/cloud1.svg"} alt="cloud" width={100} height={100} />
             </motion.div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden w-[400px] md:w-auto md:h-auto">
-                <Image src={"/bgring.svg"} alt="bg" width={700} height={700} className='animate-spin duration-[5s]' />
-            </div>
+
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-[60%] md:translate-y-[250%]">
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -85,7 +84,7 @@ const LandingPage = () => {
                     initial={{ y: 10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
-                    className='md:z-10'
+                    className='z-[2] md:z-10'
                 >
                     <Image src={"/me.png"} alt="me" width={800} height={600} />
                 </motion.div>
@@ -98,7 +97,7 @@ const LandingPage = () => {
                     <Image src={"/signature.svg"} alt="me" width={70} height={70} />
                 </motion.div>
             </div>
-            <div className="absolute h-[100px] w-full bg-gradient-to-t from-[--primary-bg] to-transparent left-0 bottom-0 md:z-10">
+            <div className="absolute h-[100px] w-full bg-gradient-to-t from-[--primary-bg] to-transparent left-0 bottom-0 md:z-[10]">
             </div>
         </div >
     )

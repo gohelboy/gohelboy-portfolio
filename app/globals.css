@@ -13,7 +13,7 @@
 
   --border-color: #1f1f1f;
   --hover-button: #0a0a0a;
-
+  --textfield-color: #eeeeee;
   --button-text: #FBF6EE;
 
 }
@@ -26,6 +26,7 @@
     --text-color-1: #FBF6EE;
     --text-color-2: #B5B5B5;
     --text-color-3: #787878;
+    --textfield-color: #1f1f1f;
     --button-text: rgb(0, 2, 34);
   }
 }

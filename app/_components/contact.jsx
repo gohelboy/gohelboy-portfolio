@@ -10,7 +10,7 @@ const judson = Judson({ subsets: ["latin"], weight: ['400', '700'], });
 const Contact = () => {
 
     const [hoverOnSend, setHoverOnSend] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false)
 
     const [details, setDetails] = useState({
         name: "",
@@ -59,7 +59,7 @@ const Contact = () => {
     return (
         <section id='contact' className={`h-fit flex flex-col gap-3 items-center pt-[100px] mx-[18px] ${judson.className}`}>
             <div className='w-full max-w-[1280px] flex flex-col gap-14 items-center justify-center relative mt-7'>
-                <div className='text-5xl md:text-7xl z-50'>Contact<span className='text-[--accent-color] animate-ping'>.</span></div>
+                <div className='text-5xl md:text-7xl'>Contact<span className='text-[--accent-color] animate-ping'>.</span></div>
                 <div className="flex flex-col md:flex-row gap-20 md:gap-5 w-full">
                     <div className='w-full flex flex-col justify-between items-center relative'>
                         <div className='flex w-full flex-col gap-7'>
@@ -80,23 +80,23 @@ const Contact = () => {
                             <form onSubmit={handleSubmit} className={`flex flex-col gap-4`}>
                                 <div className='flex flex-col w-full'>
                                     <label className="text-lg" htmlFor='name'>Your Name</label>
-                                    <input id='name' type="text" value={details.name} onChange={(e) => setDetails({ ...details, name: e.target.value })} className='w-full h-12 p-3 mt-1 font-bold text-xl rounded-lg text-[--primary-bg] bg-[--secondary-bg]' required />
+                                    <input id='name' type="text" value={details.name} onChange={(e) => setDetails({ ...details, name: e.target.value })} className='w-full h-12 p-3 mt-1 font-bold text-xl rounded-lg text-[--secondary-bg] bg-[--textfield-color]' required />
                                 </div>
                                 <div className='flex flex-col w-full'>
                                     <label className="text-lg" htmlFor='email'>Email</label>
-                                    <input id='email' type="email" value={details.email} onChange={(e) => setDetails({ ...details, email: e.target.value })} className='w-full h-12 p-3 mt-1 rounded-lg font-bold text-xl text-[--primary-bg] bg-[--secondary-bg]' required />
+                                    <input id='email' type="email" value={details.email} onChange={(e) => setDetails({ ...details, email: e.target.value })} className='w-full h-12 p-3 mt-1 rounded-lg font-bold text-xl text-[--secondary-bg] bg-[--textfield-color]' required />
                                 </div>
                                 <div className="flex items-center justify-center gap-3 md:text-xl">
-                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$50 - $100" ? "bg-[--secondary-bg] text-[--primary-bg] font-bold" : "")}
+                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$50 - $100" ? "bg-[--textfield-color] text-[--secondary-bg] font-bold" : "")}
                                         onClick={() => setDetails({ ...details, budget: "$50 - $100" })}>$50 - $100</div>
-                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$100 - $500" ? "bg-[--secondary-bg] text-[--primary-bg] font-bold" : "")}
+                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$100 - $500" ? "bg-[--textfield-color] text-[--secondary-bg] font-bold" : "")}
                                         onClick={() => setDetails({ ...details, budget: "$100 - $500" })}>$100 - $500</div>
-                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$500 - $1000" ? "bg-[--secondary-bg] text-[--primary-bg] font-bold" : "")}
+                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$500 - $1000" ? "bg-[--textfield-color] text-[--secondary-bg] font-bold" : "")}
                                         onClick={() => setDetails({ ...details, budget: "$500 - $1000" })}>$500 - $1000</div>
                                 </div>
                                 <div className='flex flex-col w-full'>
                                     <label className="text-lg " htmlFor='message'>Message</label>
-                                    <textarea id='message' rows={5} value={details.message} onChange={(e) => setDetails({ ...details, message: e.target.value })} className='w-full mt-1 p-3 font-bold text-[--primary-bg] text-xl  rounded-lg bg-[--secondary-bg]' required />
+                                    <textarea id='message' rows={5} value={details.message} onChange={(e) => setDetails({ ...details, message: e.target.value })} className='w-full mt-1 p-3 font-bold text-[--secondary-bg] text-xl  rounded-lg bg-[--textfield-color]' required />
                                 </div>
                                 <button
                                     type="submit"

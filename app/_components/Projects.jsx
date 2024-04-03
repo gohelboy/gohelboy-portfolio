@@ -71,20 +71,14 @@ const Projects = () => {
                             onMouseLeave={() => endHover(i)}
                         >
                             <div className='bg-[#151515] w-full rounded-2xl flex items-center justify-center text-7xl p-1 md:p-2 border-[--border-color] relative cursor-pointer' >
-                                <motion.div
-                                    initial={{ opacity: 0, x: "-20px", y: "20px" }}
-                                    animate={hoverStates[i] ? { opacity: 1, x: "0px", y: 0 } : {}}
-                                    transition={{ ease: "easeInOut", type: "spring", duration: 0.4 }}
-                                    className="absolute bottom-6 left-6"
-                                >
+                                <div className={cn("absolute bottom-0 left-0 opacity-0 transition-all",
+                                    hoverStates[i] && "opacity-100 bottom-3 left-3 md:bottom-6 md:left-6")}>
                                     <IconLinkArrow className={"fill-[--secondary-bg] w-4 md:w-auto"} />
-                                </motion.div>
-                                <Link href={project?.link ?? "#projects"}>
-                                    <motion.div
-                                        initial={{ scale: 1 }}
-                                        animate={{ scale: hoverStates[i] ? 0.98 : 1 }}
-                                        className=" overflow-hidden rounded-xl group-hover:rounded-bl-[100px] md:group-hover:rounded-bl-[200px] transition-all duration-300"
-                                    >{project.image}</motion.div>
+                                </div>
+                                <Link href={project?.link ?? "#projects"} onMouseEnter={() => startHover(i)}
+                                    onMouseLeave={() => endHover(i)}>
+                                    <div className={cn("overflow-hidden rounded-xl group-hover:rounded-bl-[100px] md:group-hover:rounded-bl-[200px] transition-all duration-300", hoverStates[i] ? 'scale-[0.98]' : "scale-[1]")}
+                                    >{project.image}</div>
                                 </Link>
                             </div>
                             <div className='w-full flex flex-col gap-4 md:gap-7 justify-between p-4'>

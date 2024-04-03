@@ -62,7 +62,7 @@ const NewNavbar = () => {
     ]
 
     return (
-        <nav className={`${mate_sc.className} fixed top-7 left-1/2 transform -translate-x-1/2  w-full z-[1] flex items-center justify-center`}>
+        <nav className={`${mate_sc.className} fixed top-7 left-1/2 transform -translate-x-1/2  w-full z-[10] flex items-center justify-center`}>
             <motion.div
                 initial={{ height: 0, width: 0, top: 0 }}
                 animate={{
