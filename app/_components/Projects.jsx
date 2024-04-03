@@ -49,7 +49,7 @@ const Projects = () => {
         },
         {
             logo: <Image src={"/tsp.svg"} width={150} height={150} alt='TSP' />,
-            description: "Beingepedia is a visually appealing platform where users can effortlessly discover trending movies and series. It features a comprehensive search function for all types of shows, allowing easy exploration of diverse content. Users can create personalized accounts to manage their viewing experience by adding content to their watchlist or watched list, making it a convenient way to stay updated with the latest trends.",
+            description: "TSP Tiffin Service Provider is a platform connecting users and meal providers. Users access daily tiffin options, manage subscriptions, and track orders, while providers upload menus, handle orders, and monitor payments. Both panels facilitate communication, feedback, and ratings. Integrated features include payment gateways, GPS tracking, and notifications for seamless operations.",
             icons: [IconReact, IconRedux, IconHTML, IconCSS, IconMongo, IconExpress, IconNODE],
             image: <Image src={"/tsp1.jpg"} width={700} height={700} alt='Bingepedia' />,
         },
