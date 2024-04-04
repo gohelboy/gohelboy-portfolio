@@ -82,10 +82,10 @@ const Footer = () => {
                         <div className='flex flex-col gap-5'>
                             <div className='text-xl border-b-2'>Explore </div>
                             <div className='text-base md:text-xl flex flex-col gap-1.5 md:gap-3  text-[--text-color-2]'>
-                                <span className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>About</span>
-                                <span className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Skills</span>
-                                <span className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Projects</span>
-                                <span className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Contact</span>
+                                <Link href={"#about"} className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>About</Link>
+                                <Link href={"#skills"} className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Skills</Link>
+                                <Link href={"#projects"} className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Projects</Link>
+                                <Link href={"#contact"} className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Contact</Link>
                             </div>
                         </div>
                         <button
