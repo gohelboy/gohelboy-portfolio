@@ -3,9 +3,9 @@ import { motion } from "framer-motion"
 import { ChevronsLeft } from 'lucide-react'
 import { Mate_SC } from 'next/font/google'
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useRef, useState } from 'react'
 import { cn } from "../_utils/helper"
-import Link from "next/link"
 
 const mate_sc = Mate_SC({ subsets: ['latin'], weight: ["400"] });
 
@@ -66,11 +66,11 @@ const NewNavbar = () => {
             <motion.div
                 initial={{ height: 0, width: 0, top: 0 }}
                 animate={{
-                    height: isMenuOpen ? 'auto' : "62px",
+                    height: isMenuOpen ? 'auto' : "60px",
                     width: isMenuOpen ? '97%' : navRef.current?.offsetWidth - 10 + "px",
                     top: isMenuOpen ? "-14px" : 0,
                 }}
-                className="fixed w-full h-full rounded-2xl bg-[--secondary-bg] overflow-hidden"
+                className="fixed mt-[2px] w-full h-full rounded-2xl bg-[--secondary-bg] overflow-hidden"
             >
                 <div className="p-5 md:p-9 flex flex-col md:flex-row gap-7 w-full justify-between text-[--text-color-3]">
                     <div className="flex flex-col items-cetner justify-center mt-16 md:mt-14 " >
@@ -171,12 +171,10 @@ const NewNavbar = () => {
                 <Image src={"./signature.svg"} width={64} height={64} alt="signature" priority />
                 <div className='flex items-center gap-4'>
                     <button
-                        classes={'relative text-[--button-text] px-5 py-2 rounded-md font-bold bg-transparent hover:bg-transparent cursor-pointer text-[--text-color-1] font-normal'}
-                        onClick={controlMenu}
-                    >
+                        classes={'relative text-[--button-text] px-5 py-2 rounded-md font-bold bg-transparent hover:bg-transparent cursor-pointer text-[--text-color-1] font-normal'} onClick={controlMenu}>
                         Menu
                     </button>
-                    <a href={"#contact"} className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold cursor-pointer" >Let&apos;s talk</a>
+                    <Link href="#contact" className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold cursor-pointer" >Let&apos;s talk</Link>
                 </div>
             </motion.div>
         </nav >

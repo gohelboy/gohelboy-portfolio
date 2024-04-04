@@ -9,7 +9,6 @@ const mate_sc = Mate_SC({ subsets: ['latin'], weight: ['400'] });
 
 const About = () => {
 
-
     const [greetingIndex, setGreetingIndex] = useState(0);
     const greetings = [
         "તમે કેમ છો?",
@@ -32,7 +31,11 @@ const About = () => {
     return (
         <section id='about' className={`h-fit flex flex-col gap-3 items-center justify-center mx-[18px] py-[120px] ${judson.className}`}>
             <motion.div className='w-full md:max-w-[1140px] 2xl:max-w-[1280px] border border-[--border-color] relative rounded-3xl p-7'>
-                <motion.div className='text-5xl absolute left-[30px] top-[-30px] bg-[--primary-bg] '>{greetings[greetingIndex]}</motion.div>
+                <motion.div
+                    key={greetings[greetingIndex]}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className='text-5xl absolute left-[30px] top-[-30px] bg-[--primary-bg]'>{greetings[greetingIndex]}</motion.div>
                 <div className='flex flex-col gap-7 md:flex-row justify-between'>
                     <div className='h-full flex justify-between'>
                         <div className=''>
