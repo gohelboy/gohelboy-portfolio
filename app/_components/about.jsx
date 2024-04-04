@@ -31,13 +31,8 @@ const About = () => {
 
     return (
         <section id='about' className={`h-fit flex flex-col gap-3 items-center justify-center mx-[18px] py-[120px] ${judson.className}`}>
-            <motion.div className='w-full max-w-[1280px] border border-[--border-color] relative rounded-3xl p-7'>
-                <motion.div
-                    key={greetingIndex}
-                    initial={{ opacity: 0, }}
-                    animate={{ opacity: 1, }}
-                    transition={{ duration: 0.5 }}
-                    className='text-5xl absolute left-[30px] top-[-30px] bg-[--primary-bg] '>{greetings[greetingIndex]}</motion.div>
+            <motion.div className='w-full md:max-w-[1140px] 2xl:max-w-[1280px] border border-[--border-color] relative rounded-3xl p-7'>
+                <motion.div className='text-5xl absolute left-[30px] top-[-30px] bg-[--primary-bg] '>{greetings[greetingIndex]}</motion.div>
                 <div className='flex flex-col gap-7 md:flex-row justify-between'>
                     <div className='h-full flex justify-between'>
                         <div className=''>
@@ -92,7 +87,7 @@ const About = () => {
                     </div>
                 </div>
             </motion.div>
-            <div className='w-full max-w-[1280px] border border-[--border-color] relative rounded-3xl p-7'>
+            <div className='w-full md:max-w-[1140px] 2xl:max-w-[1280px] border border-[--border-color] relative rounded-3xl p-7'>
                 <div className='flex flex-col md:flex-row gap-7 justify-between'>
                     <p className='max-w-[700px] first-letter:text-7xl'>I work as a web developer, designer, and graphic artist, and I also enjoy creating games. Most of my time is spent coding, designing, and developing scenes. When I see something interesting, I often think about how I could make it myself. I then dive into the process of learning and improving my skills, both in terms of technology and how I see the world.
                         <br />

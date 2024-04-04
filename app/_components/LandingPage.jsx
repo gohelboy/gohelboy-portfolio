@@ -37,7 +37,7 @@ const LandingPage = () => {
 
     return (
         <div className="h-screen relative flex flex-col items-center justify-end overflow-hidden" onMouseMove={handleMouseMove} ref={containerRef}>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden w-[400px] md:w-auto md:h-auto">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden w-[400px] md:w-[40%] 2xl:w-auto 2xl:h-auto">
                 <Image src={"/bgring.svg"} alt="bg" width={700} height={700} className='animate-spin duration-[5s]' />
             </div>
             <div className='absolute top-[70px] right-0 opacity-10 animate-cloudmoveleft w-[150px] md:w-auto'>
@@ -52,7 +52,7 @@ const LandingPage = () => {
                 <Image src={"/cloud1.svg"} alt="cloud" width={100} height={100} />
             </motion.div>
 
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-[60%] md:translate-y-[250%]">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-[60%] md:translate-y-[225%] 2xl:translate-y-[250%]">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.2 }}
@@ -64,17 +64,17 @@ const LandingPage = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className={`${mate_sc.className} static md:absolute md:top-[-45px] md:left-[110px] text-right md:text-start text-5xl md:text-7xl`}> Always </motion.div>
+                    className={`${mate_sc.className} static md:absolute md:top-[-35px] 2xl:top-[-45px] md:left-[80px] 2xl:left-[110px] text-right md:text-start text-5xl 2xl:text-7xl`}> Always </motion.div>
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className={`${mate_sc.className} static md:absolute md:top-[-45px] md:right-[145px] text-right md:text-start text-5xl md:text-7xl`}>On </motion.div>
+                    className={`${mate_sc.className} static md:absolute md:top-[-35px] 2xl:top-[-45px] md:right-[100px] 2xl:right-[145px] text-right md:text-start text-5xl 2xl:text-7xl`}>On </motion.div>
                 <motion.div
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className={`${angkor.className} text-7xl md:text-9xl text-stroke`}>
+                    className={`${angkor.className} text-7xl md:text-[5.5rem] 2xl:text-9xl text-stroke`}>
                     <span className="hidden md:block text-nowrap">Creative Mode</span>
                     <span className="md:hidden">Creative Mode</span>
                 </motion.div>
@@ -84,7 +84,7 @@ const LandingPage = () => {
                     initial={{ y: 10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
-                    className='z-[2] md:z-10'
+                    className='z-[2] md:z-10 md:w-[70%] 2xl:w-full'
                 >
                     <Image src={"/me.png"} alt="me" width={800} height={600} />
                 </motion.div>

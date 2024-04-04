@@ -39,11 +39,12 @@ const Footer = () => {
     };
 
     return (
-        <div
+        <footer
+            id='footer'
             onMouseMove={handleMouseMove}
             ref={containerRef}
-            className='h-[85vh] md:h-[90vh] overflow-hidden mx-3 md:mx-7 relative flex flex-col  items-center mt-[100px] p-7 md:p-10 bg-gradient-to-b from-[#0a0a0a] via-[--primary-bg] to-[--primary-bg] rounded-t-3xl border border-b-0 border-[--border-color]'>
-            <div className='w-full max-w-[1280px]'>
+            className='h-[85vh] md:h-[90vh] overflow-hidden mx-3 md:mx-7 relative flex flex-col items-center mt-[100px] p-7 md:p-10 bg-gradient-to-b from-[#0a0a0a] via-[--primary-bg] to-[--primary-bg] rounded-t-3xl border border-b-0 border-[--border-color]'>
+            <div className='w-full md:max-w-[1140px] 2xl:max-w-[1280px]'>
                 <div className='flex flex-col-reverse md:flex-row justify-between gap-7'>
                     <div className='flex flex-col gap-7 justify-between'>
                         <div className='text-center md:text-start text-base md:text-lg'>
@@ -120,7 +121,7 @@ const Footer = () => {
                     </path>
                 </svg>
             </div>
-        </div>
+        </footer>
     )
 }
 

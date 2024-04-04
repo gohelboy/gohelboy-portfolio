@@ -58,8 +58,8 @@ const Contact = () => {
 
     return (
         <section id='contact' className={`h-fit flex flex-col gap-3 items-center pt-[100px] mx-[18px] ${judson.className}`}>
-            <div className='w-full max-w-[1280px] flex flex-col gap-14 items-center justify-center relative mt-7'>
-                <div className='text-5xl md:text-7xl'>Contact<span className='text-[--accent-color] animate-ping'>.</span></div>
+            <div className='w-full md:max-w-[1140px] 2xl:max-w-[1280px]  flex flex-col gap-14 items-center justify-center relative mt-7'>
+                <div className='text-5xl md:text-6xl 2xl:text-7xl'>Contact<span className='text-[--accent-color] animate-ping'>.</span></div>
                 <div className="flex flex-col md:flex-row gap-20 md:gap-5 w-full">
                     <div className='w-full flex flex-col justify-between items-center relative'>
                         <div className='flex w-full flex-col gap-7'>
@@ -87,11 +87,11 @@ const Contact = () => {
                                     <input id='email' type="email" value={details.email} onChange={(e) => setDetails({ ...details, email: e.target.value })} className='w-full h-12 p-3 mt-1 rounded-lg font-bold text-xl text-[--secondary-bg] bg-[--textfield-color]' required />
                                 </div>
                                 <div className="flex items-center justify-center gap-3 md:text-xl">
-                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$50 - $100" ? "bg-[--textfield-color] text-[--secondary-bg] font-bold" : "")}
+                                    <div className={cn("border border-[--border-color] w-full p-2 2xl:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$50 - $100" ? "bg-[--textfield-color] text-[--secondary-bg] font-bold" : "")}
                                         onClick={() => setDetails({ ...details, budget: "$50 - $100" })}>$50 - $100</div>
-                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$100 - $500" ? "bg-[--textfield-color] text-[--secondary-bg] font-bold" : "")}
+                                    <div className={cn("border border-[--border-color] w-full p-2 2xl:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$100 - $500" ? "bg-[--textfield-color] text-[--secondary-bg] font-bold" : "")}
                                         onClick={() => setDetails({ ...details, budget: "$100 - $500" })}>$100 - $500</div>
-                                    <div className={cn("border border-[--border-color] w-full p-2 md:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$500 - $1000" ? "bg-[--textfield-color] text-[--secondary-bg] font-bold" : "")}
+                                    <div className={cn("border border-[--border-color] w-full p-2 2xl:p-3 text-center rounded-full cursor-pointer select-none", details.budget == "$500 - $1000" ? "bg-[--textfield-color] text-[--secondary-bg] font-bold" : "")}
                                         onClick={() => setDetails({ ...details, budget: "$500 - $1000" })}>$500 - $1000</div>
                                 </div>
                                 <div className='flex flex-col w-full'>
