@@ -11,7 +11,7 @@ import Projects from "./_components/Projects"
 export default function Home() {
   return (
     <main className="h-full relative">
-      <GrainFilter />
+      {/* <GrainFilter />
       <NewNavbar />
       <LandingPage />
       <About />
@@ -19,7 +19,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }
