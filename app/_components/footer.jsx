@@ -1,12 +1,13 @@
 
 'use client'
 import React, { useRef } from 'react'
-import { Github, Instagram, Twitter, Mail, Linkedin } from "lucide-react"
+import { Github, Instagram, Twitter, Mail, Linkedin, MoveDown, ArrowBigDownDash, FileDown } from "lucide-react"
 import { Mate_SC } from 'next/font/google';
 import Link from "next/link"
 import Image from "next/image";
 import { useMotionValue, motion } from "framer-motion"
 import { MoveUp } from "lucide-react"
+import { downloadResume } from '../_utils/helper';
 
 const mate_sc = Mate_SC({ subsets: ['latin'], weight: ['400'] });
 const Footer = () => {
@@ -88,11 +89,18 @@ const Footer = () => {
                                 <Link href={"#contact"} className='hover:text-[--secondary-bg] cursor-pointer transition-colors '>Contact</Link>
                             </div>
                         </div>
-                        <button
-                            onClick={scrollToTop}
-                            className="rounded-2xl p-4 border border-[--border-color] h-fit active:scale-95 transition-all">
-                            <MoveUp />
-                        </button>
+                        <div className='flex flex-col md:flex-row-reverse gap-5 items-center md:items-start '>
+                            <button
+                                onClick={scrollToTop}
+                                className="rounded-2xl p-4 border border-[--border-color] h-fit active:scale-95 transition-all">
+                                <MoveUp />
+                            </button>
+                            <button
+                                onClick={downloadResume}
+                                className="rounded-2xl p-4 flex items-center justify-center border border-[--border-color] h-fit active:scale-95 transition-all">
+                                <FileDown />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,11 @@
 'use client'
 import { motion } from "framer-motion"
-import { ChevronsLeft } from 'lucide-react'
+import { ChevronsLeft, FileDown } from 'lucide-react'
 import { Mate_SC } from 'next/font/google'
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from 'react'
-import { cn } from "../_utils/helper"
+import { cn, downloadResume } from "../_utils/helper"
 
 const mate_sc = Mate_SC({ subsets: ['latin'], weight: ["400"] });
 
@@ -174,7 +174,13 @@ const NewNavbar = () => {
                         classes={'relative text-[--button-text] px-5 py-2 rounded-md font-bold bg-transparent hover:bg-transparent cursor-pointer text-[--text-color-1] font-normal'} onClick={controlMenu}>
                         Menu
                     </button>
-                    <Link href="#contact" className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold cursor-pointer" >Let&apos;s talk</Link>
+                    <Link
+                        href="#contact"
+                        onClick={downloadResume}
+                        className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold cursor-pointer flex gap-1 items-center justify-center" >
+                        Resume
+                        <FileDown />
+                    </Link>
                 </div>
             </motion.div>
         </nav >
