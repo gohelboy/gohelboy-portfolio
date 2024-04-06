@@ -177,8 +177,8 @@ const NewNavbar = () => {
                     <Link
                         href="#contact"
                         onClick={downloadResume}
-                        className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] px-5 py-2 rounded-md font-bold cursor-pointer flex gap-1 items-center justify-center" >
-                        Resume
+                        className="bg-[--secondary-bg] relative hover:bg-[--hover-button] text-[--button-text] p-2 md:px-5 md:py-2 rounded-md font-bold cursor-pointer flex gap-1 items-center justify-center" >
+                        <span className="hidden md:block">Resume</span>
                         <FileDown />
                     </Link>
                 </div>
