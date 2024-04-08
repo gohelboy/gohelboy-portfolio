@@ -72,7 +72,7 @@ const Footer = () => {
                                 </Link>
                                 <Link href="https://github.com/gohelboy" className="flex items-center gap-1 hover:text-[--secondary-bg] cursor-pointer transition-colors">
                                     <Github className='w-[20px] md:w-auto' />
-                                    <span>Gitub</span>
+                                    <span>Github</span>
                                 </Link>
                                 <Link href="https://www.instagram.com/gohelboy/" className="flex items-center gap-1 hover:text-[--secondary-bg] cursor-pointer transition-colors">
                                     <Instagram className='w-[20px] md:w-auto' />
