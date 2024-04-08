@@ -15,10 +15,7 @@ const Worked = () => {
 
     return (
         <section className='py-[20px] md:py-[50px] mx-[18px] flex flex-col items-center justify-center p-4 md:gap-7'>
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 1 }}
+            <div
                 className='flex flex-wrap items-center justify-center md:justify-between gap-4 md:gap-4 p-7 px-10 border border-[--border-color] w-full md:max-w-[1140px] 2xl:max-w-[1280px] rounded-3xl bg-gradient-to-b from-[#0a0a0a] via-[--primary-bg] to-[--primary-bg] '>
                 {icons?.map((icon, i) => <motion.div
                     initial={{ y: 40, opacity: 0 }}
@@ -28,7 +25,7 @@ const Worked = () => {
                     key={i}>
                     {icon.icon}
                 </motion.div>)}
-            </motion.div>
+            </div>
         </section >
     );
 };
