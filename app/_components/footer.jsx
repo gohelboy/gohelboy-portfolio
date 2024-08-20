@@ -62,7 +62,7 @@ const Footer = () => {
                                     <Mail className='w-[20px] md:w-auto' />
                                     <span>Email</span>
                                 </Link>
-                                <Link href="https://www.linkedin.com/in/dwarkesh-gohel-0b47b7190/" className="flex items-center gap-1 hover:text-[--secondary-bg] cursor-pointer transition-colors">
+                                <Link href="https://www.linkedin.com/in/dwarkeshgohel/" className="flex items-center gap-1 hover:text-[--secondary-bg] cursor-pointer transition-colors">
                                     <Linkedin className='w-[20px] md:w-auto' />
                                     <span>Linkedin</span>
                                 </Link>
