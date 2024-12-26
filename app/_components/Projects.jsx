@@ -12,7 +12,7 @@ const Projects = () => {
             logo: <IconPartNote className={"w-[150px] fill-[--secondary-bg]"} />,
             description: "Part Important Note is a dynamic platform designed for real-time collaboration, robust idea discussion, and rough drawing capabilities. With live editing and instant updates, teams seamlessly capture and discuss ideas while visually mapping them. Integration with project management tools enhances productivity, making it essential for streamlined teamwork and efficient idea management.",
             icons: [IconNextJS, IconTailwind, IconConvex, IconShadCN],
-            image: <Image src={"/pn1.png"} width={700} height={700} alt='PartNote' />,
+            image: <img src={"/pn1.png"} width={700} height={700} alt='PartNote' />,
             link: "https://partnote.vercel.app/",
 
         },
@@ -20,28 +20,28 @@ const Projects = () => {
             logo: <Image src={"/pw.png"} width={100} height={100} alt='Property Watch' />,
             description: "Property Watch is a versatile platform where users and brokers list properties for periodic checks, including damage inspections. When a checker reports an issue, the platform notifies the owner or admin, ensuring prompt attention to property maintenance. Users can also add different property types and access educational courses and videos on real estate.",
             icons: [IconReact, IconRedux, IconHTML, IconSCSS, IconBootstrap, IconFirebase],
-            image: <Image src={"/pw1.png"} width={700} height={700} alt='property watch' />,
+            image: <img src={"/pw1.png"} width={700} height={700} alt='property watch' />,
             link: "https://app.propertywatch.com/",
         },
         {
             logo: <Image src={"/inside.svg"} width={100} height={100} alt='Inside' />,
             description: "The EMS system for company management integrates a sophisticated leave system, project management tools, task tracking capabilities, and employee activity management. It also includes robust HR department functionalities such as employee records management, payroll processing, benefits administration, and compliance tracking. This comprehensive platform streamlines processes, enhances communication, improves collaboration, and boosts productivity across departments within the organization.",
             icons: [IconReact, IconRedux, IconHTML, IconSCSS, IconBootstrap, IconNODE, IconExpress, IconSQL],
-            image: <Image src={"/i1.png"} width={700} height={700} alt='Inside' />,
+            image: <img src={"/i1.png"} width={700} height={700} alt='Inside' />,
 
         },
         {
             logo: <Image src={"/bingepedia.png"} width={150} height={150} alt='Bingepedia' />,
             description: "Beingepedia is a visually appealing platform where users can effortlessly discover trending movies and series. It features a comprehensive search function for all types of shows, allowing easy exploration of diverse content. Users can create personalized accounts to manage their viewing experience by adding content to their watchlist or watched list, making it a convenient way to stay updated with the latest trends.",
             icons: [IconReact, IconRedux, IconHTML, IconCSS, IconMongo, IconExpress, IconNODE],
-            image: <Image src={"/bp2.png"} width={700} height={700} alt='Bingepedia' />,
+            image: <img src={"/bp2.png"} width={700} height={700} alt='Bingepedia' />,
             link: "https://bingepedia.vercel.app/",
         },
         {
             logo: <Image src={"/tsp.svg"} width={150} height={150} alt='TSP' />,
             description: "TSP Tiffin Service Provider is a platform connecting users and meal providers. Users access daily tiffin options, manage subscriptions, and track orders, while providers upload menus, handle orders, and monitor payments. Both panels facilitate communication, feedback, and ratings. Integrated features include payment gateways, GPS tracking, and notifications for seamless operations.",
             icons: [IconReact, IconRedux, IconHTML, IconCSS, IconMongo, IconExpress, IconNODE],
-            image: <Image src={"/tsp1.jpg"} width={700} height={700} alt='Bingepedia' />,
+            image: <img src={"/tsp1.jpg"} width={700} height={700} alt='Bingepedia' />,
         },
     ];
 
