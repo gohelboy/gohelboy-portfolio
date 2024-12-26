@@ -47,7 +47,7 @@ const About = () => {
                                         initial={{ scale: 0 }}
                                         whileInView={{ scale: 1 }}
                                         viewport={{ once: true, amount: 1 }}>
-                                        <Image className='overflow-hidden w-[40px] md:w-[90px] mt-1 md:mt-4 border filter grayscale group-hover:grayscale-0 transition-all rounded-full'
+                                        <img className='overflow-hidden w-[40px] md:w-[90px] mt-1 md:mt-4 border filter grayscale group-hover:grayscale-0 transition-all rounded-full'
                                             src={"/np.png"}
                                             alt="me"
                                             width={100}
