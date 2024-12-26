@@ -86,7 +86,7 @@ const LandingPage = () => {
                     transition={{ delay: 0.3 }}
                     className='z-[2] md:z-10 md:w-[70%] 2xl:w-full'
                 >
-                    <Image src={"/me.png"} alt="me" width={800} height={600} />
+                    <img src={"/me.png"} alt="me" width={800} height={600} />
                 </motion.div>
                 <motion.div
                     initial={{ x: 10, opacity: 0 }}
@@ -94,7 +94,7 @@ const LandingPage = () => {
                     transition={{ delay: 0.3 }}
                     className='absolute bottom-10 right-10 hidden md:block'
                 >
-                    <Image src={"/signature.svg"} alt="me" width={70} height={70} />
+                    <img src={"/signature.svg"} alt="me" width={70} height={70} />
                 </motion.div>
                 <div className="absolute h-[100px] w-full bg-gradient-to-t from-[--primary-bg] to-transparent left-0 bottom-0 z-[2] md:z-[10]">
                 </div>
