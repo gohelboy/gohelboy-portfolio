@@ -107,7 +107,7 @@ const LandingPage = () => {
           transition={{ delay: 0.3 }}
           className="z-[2] md:z-10 md:w-[70%] 2xl:w-[80%] 3xl:w-full"
         >
-          <img src={"/me.png"} alt="me" width={800} height={600} />
+          <img src={"/me1.png"} alt="me" width={800} height={600} />
         </motion.div>
         <motion.div
           initial={{ x: 10, opacity: 0 }}
